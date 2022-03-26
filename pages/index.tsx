@@ -6,6 +6,8 @@ import styles from '../styles/Home.module.scss';
 import { Post } from '../types/post';
 
 const Home = () => {
+  let posts: Post[] = [];
+
   const { loading, error, data } = useQuery(GET_POSTS, {
     variables: {
       options: {
@@ -19,7 +21,7 @@ const Home = () => {
 
   if (loading) return null;
   if (error) return `Error! ${error}`;
-  console.log(data);
+  if (data) posts = data.posts.data;
 
   return (
     <Layout>
@@ -35,7 +37,7 @@ const Home = () => {
 
           <h2>Read your Posts:</h2>
           <div className={styles.posts}>
-            {data.posts.data.map((post: Partial<Post>) => (
+            {posts.map((post: Partial<Post>) => (
               <div className={styles['post-wrapper']} key={post.id}>
                 <PostPreview post={post} />
               </div>

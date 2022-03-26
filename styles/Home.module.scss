@@ -13,8 +13,7 @@
   .post-wrapper {
     margin-bottom: 30px;
     flex-grow: 1;
-    flex-basis: calc(50% - 15px);
-    overflow: hidden;
+    width: calc(50% - 15px);
 
     &:nth-child(odd) {
       margin-right: 15px;

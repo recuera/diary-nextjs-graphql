@@ -8,14 +8,14 @@ type Props = {
 const PostPreview = ({ post }: Props) => {
   return (
     <>
-      <div className={styles['post-container']}>
+      <a className={styles.container} href={'/posts/' + post.id}>
         <div className={styles.title}>
           <span>📒</span>
           <h3>{post.title}</h3>
         </div>
 
         <p>{post.body}</p>
-      </div>
+      </a>
     </>
   );
 };

@@ -1,6 +1,6 @@
 @import 'variables';
 
-.post-container {
+.container {
   border: 1px solid $_GREY_10;
   padding: 20px;
   text-align: left;
@@ -8,7 +8,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  display: block;
+  transition: all ease-out .12s;
+  background-color: #fff;
 
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 5px 12px 1px #a2a2a224;
+  }
 
 
   p {
@@ -16,7 +23,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 100%;
+    max-width: 100%;
   }
 }
 
