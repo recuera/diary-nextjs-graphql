@@ -1,7 +1,9 @@
 import { useQuery } from '@apollo/client';
 import Layout from '../components/layout';
+import PostPreview from '../components/post-preview';
 import GET_POSTS from '../lib/queries/get-posts';
 import styles from '../styles/Home.module.scss';
+import { Post } from '../types/post';
 
 const Home = () => {
   const { loading, error, data } = useQuery(GET_POSTS, {
@@ -9,7 +11,7 @@ const Home = () => {
       options: {
         paginate: {
           page: 1,
-          limit: 5,
+          limit: 10,
         },
       },
     },
@@ -23,16 +25,21 @@ const Home = () => {
     <Layout>
       <div className={styles.container}>
         <main className={styles.main}>
-          <h1 className={styles.title}>Welcome to this blog!</h1>
+          <h1 className={styles.title}>Welcome to your diary!</h1>
 
           <div className={styles.grid}>
             <a href='/posts/create-post' className={styles.card}>
-              <h2>Create Post &rarr;</h2>
+              <h2>Write a new Post 🖋 </h2>
             </a>
+          </div>
 
-            <a href='/posts/7' className={styles.card}>
-              <h2>Some Post &rarr;</h2>
-            </a>
+          <h2>Read your Posts:</h2>
+          <div className={styles.posts}>
+            {data.posts.data.map((post: Partial<Post>) => (
+              <div className={styles['post-wrapper']} key={post.id}>
+                <PostPreview post={post} />
+              </div>
+            ))}
           </div>
         </main>
       </div>
