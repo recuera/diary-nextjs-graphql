@@ -1,10 +1,24 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
-import Layout from '../components/Layout';
+import { useQuery } from '@apollo/client';
+import Layout from '../components/layout';
+import GET_POSTS from '../lib/queries/get-posts';
 import styles from '../styles/Home.module.scss';
 
-const Home: NextPage = () => {
+const Home = () => {
+  const { loading, error, data } = useQuery(GET_POSTS, {
+    variables: {
+      options: {
+        paginate: {
+          page: 1,
+          limit: 5,
+        },
+      },
+    },
+  });
+
+  if (loading) return null;
+  if (error) return `Error! ${error}`;
+  console.log(data);
+
   return (
     <Layout>
       <div className={styles.container}>

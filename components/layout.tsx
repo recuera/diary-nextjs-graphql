@@ -1,4 +1,4 @@
-import styles from './layout.module.scss';
+import styles from '../styles/Layout.module.scss';
 import Head from 'next/head';
 
 type Props = {
