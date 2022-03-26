@@ -1,18 +1,12 @@
 import { NextPage } from 'next';
-import Head from 'next/head';
+import Layout from '../../components/Layout';
 
 const Post: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Finnovating Blog</title>
-        <meta name='description' content='Finnovating Blog' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-
-      <main>
-        <h1>Create Post</h1>
-      </main>
+      <Layout>
+        <h1>Some post will be here!</h1>
+      </Layout>
     </>
   );
 };
