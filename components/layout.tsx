@@ -18,7 +18,7 @@ const Layout = ({ children }: Props) => {
         <div className={styles.content}>{children}</div>
       </div>
 
-      <footer className={styles.footer}>Footer</footer>
+      <footer className={styles.footer}>Made by Ana Recuero</footer>
     </>
   );
 };

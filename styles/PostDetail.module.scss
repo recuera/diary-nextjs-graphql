@@ -1,0 +1,32 @@
+@import 'variables';
+
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 30px;
+  border-left: 1px solid $_GREY_10;
+}
+
+.title {
+  display: flex;
+
+  span {
+    margin-right: 20px;
+    font-size: 44px;
+    margin-top: 16px;
+  }
+
+  h2 {
+    color: $_PRIMARY_COLOR;
+    margin-top: 10px;
+  }
+}
+
+.body {
+  margin-left: 64px;
+
+  p {
+    line-height: 2rem;
+    color: $_GREY_50;
+  }
+}
