@@ -13,15 +13,15 @@ const PostDetail = ({ id }: { id: number }) => {
   const router = useRouter();
   let post: Post = new Post();
 
-  const [savePost] = useMutation(DELETE_POST, {
+  const [deletePost] = useMutation(DELETE_POST, {
     onCompleted: () => {
       window.alert('Post deleted correctly!');
       router.push(`/`);
     },
   });
 
-  const deletePost = () => {
-    savePost({ variables: { id } });
+  const handleDelete = () => {
+    deletePost({ variables: { id } });
   };
 
   const { loading, error, data } = useQuery(GET_POST_DETAIL, {
@@ -40,11 +40,14 @@ const PostDetail = ({ id }: { id: number }) => {
           <PostBody body={post.body} />
 
           <div className={styles.actions}>
-            <Link as={'./edit'} href='./edit' passHref>
+            <Link
+              as={`/posts/${post.id}/edit`}
+              href='/posts/[post.id]/edit'
+              passHref>
               <a className='button-primary'>Edit</a>
             </Link>
 
-            <button className='button-warn' onClick={deletePost}>
+            <button className='button-warn' onClick={handleDelete}>
               Delete
             </button>
           </div>
