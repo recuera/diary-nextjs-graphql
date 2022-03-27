@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a small diary test project.
+
+It is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+The backend is made with [GraphQL](https://graphql.org/) and [Apollo](https://www.apollographql.com/), using the [GraphQLZeroApi](https://graphqlzero.almansi.me/);
 
 ## Getting Started
 
