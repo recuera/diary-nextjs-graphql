@@ -1,0 +1,14 @@
+@import 'variables';
+
+.header {
+  padding: 20px 30px;
+  border-bottom: 1px solid $_GREY_10;
+  background: $_GREY_5;
+
+  a {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+    color: $_PRIMARY_COLOR;
+  }
+}

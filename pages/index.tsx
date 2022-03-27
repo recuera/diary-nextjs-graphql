@@ -1,4 +1,5 @@
 import { useQuery } from '@apollo/client';
+import Link from 'next/link';
 import Layout from '../components/layout';
 import PostPreview from '../components/post-preview';
 import GET_POSTS from '../lib/queries/get-posts';
@@ -30,9 +31,11 @@ const Home = () => {
           <h1 className={styles.title}>Welcome to your diary!</h1>
 
           <div className={styles.grid}>
-            <a href='/posts/create-post' className={styles.card}>
-              <h2>Write a new Post 🖋 </h2>
-            </a>
+            <Link as={`/posts/create`} href='/posts/create' passHref>
+              <a className={styles.card}>
+                <h2>Write a new Post 🖋 </h2>
+              </a>
+            </Link>
           </div>
 
           <h2>Read your Posts:</h2>
