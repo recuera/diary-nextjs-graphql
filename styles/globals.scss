@@ -33,3 +33,55 @@ h2 {
 p {
   font-size: 1rem;
 }
+
+input,
+textarea {
+  min-height: 50px;
+  border-radius: 5px;
+  border: none;
+  background: $_GREY_5;
+  border-bottom: 1px solid $_GREY_10;
+  padding: 20px;
+  font-size: 1rem;
+  font-family: Helvetica, Arial, sans-serif;
+
+  &:focus {
+    outline: none
+  }
+}
+
+@mixin button-skeleton {
+  border-radius: 5px;
+  height: 55px;
+  min-width: 80px;
+  padding: 0px 40px;
+  font-size: 1rem;
+  line-height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: all .15s ease-in-out;
+  white-space: nowrap;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button {
+  @include button-skeleton();
+
+  &.button-primary {
+    background: $_PRIMARY_COLOR;
+    color: #fff;
+
+    &:hover {
+      opacity: .6;
+    }
+  }
+}

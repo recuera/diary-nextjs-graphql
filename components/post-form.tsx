@@ -36,7 +36,9 @@ const PostForm = ({ title, body, save }: Props) => {
           onChange={(e) => setLocalBody(e.target.value)}></textarea>
       </div>
 
-      <button onClick={handleClick}>Save</button>
+      <button className='button-primary' onClick={handleClick}>
+        Save
+      </button>
     </div>
   );
 };

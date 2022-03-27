@@ -14,7 +14,7 @@ const Home = () => {
       options: {
         paginate: {
           page: 1,
-          limit: 10,
+          limit: 20,
         },
       },
     },

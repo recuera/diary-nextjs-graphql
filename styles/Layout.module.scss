@@ -2,7 +2,8 @@
 
 .container {
   padding: 30px;
-  min-height: calc(100vh - 154px);
+  height: calc(100vh - 154px);
+  overflow: auto;
 }
 
 .content {
