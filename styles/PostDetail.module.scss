@@ -50,3 +50,14 @@
     margin-left: auto;
   }
 }
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 30px;
+
+  button {
+    margin-left: 20px;
+  }
+}

@@ -1,13 +1,28 @@
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import Layout from '../../components/layout';
 import PostBody from '../../components/post-body';
 import PostTitle from '../../components/post-title';
 import GET_POST_DETAIL from '../../lib/queries/get-post-detail';
 import { Post } from '../../types/post';
 import styles from '../../styles/PostDetail.module.scss';
+import Link from 'next/link';
+import DELETE_POST from '../../lib/queries/delete-post';
+import { useRouter } from 'next/router';
 
 const PostDetail = ({ id }: { id: number }) => {
+  const router = useRouter();
   let post: Post = new Post();
+
+  const [savePost] = useMutation(DELETE_POST, {
+    onCompleted: () => {
+      window.alert('Post deleted correctly!');
+      router.push(`/`);
+    },
+  });
+
+  const deletePost = () => {
+    savePost({ variables: { id } });
+  };
 
   const { loading, error, data } = useQuery(GET_POST_DETAIL, {
     variables: { id },
@@ -23,6 +38,16 @@ const PostDetail = ({ id }: { id: number }) => {
         <div className={styles.wrapper}>
           <PostTitle title={post.title} />
           <PostBody body={post.body} />
+
+          <div className={styles.actions}>
+            <Link as={'./edit'} href='./edit' passHref>
+              <a className='button-primary'>Edit</a>
+            </Link>
+
+            <button className='button-warn' onClick={deletePost}>
+              Delete
+            </button>
+          </div>
         </div>
       </Layout>
     </>

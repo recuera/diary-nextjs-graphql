@@ -73,15 +73,23 @@ textarea {
   cursor: pointer;
 }
 
-button {
+
+.button-primary {
   @include button-skeleton();
+  background: $_PRIMARY_COLOR;
+  color: #fff;
 
-  &.button-primary {
-    background: $_PRIMARY_COLOR;
-    color: #fff;
+  &:hover {
+    opacity: .6;
+  }
+}
 
-    &:hover {
-      opacity: .6;
-    }
+.button-warn {
+  @include button-skeleton();
+  background: #bb3d26;
+  color: #fff;
+
+  &:hover {
+    opacity: .6;
   }
 }

@@ -24,3 +24,14 @@
     }
   }
 }
+
+.subtitle {
+  a {
+    color: $_PRIMARY_COLOR;
+    transition: all ease-out .15s;
+
+    &:hover {
+      opacity: .6;
+    }
+  }
+}

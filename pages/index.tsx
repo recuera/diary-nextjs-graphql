@@ -30,15 +30,13 @@ const Home = () => {
         <main className={styles.main}>
           <h1 className={styles.title}>Welcome to your diary!</h1>
 
-          <div className={styles.grid}>
+          <h2 className={styles.subtitle}>
+            Read your Posts or
             <Link as={`/posts/create`} href='/posts/create' passHref>
-              <a className={styles.card}>
-                <h2>Write a new Post 🖋 </h2>
-              </a>
+              <a className={styles.card}> write a new one 🖋</a>
             </Link>
-          </div>
+          </h2>
 
-          <h2>Read your Posts:</h2>
           <div className={styles.posts}>
             {posts.map((post: Partial<Post>) => (
               <div className={styles['post-wrapper']} key={post.id}>
